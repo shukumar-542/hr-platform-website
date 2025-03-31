@@ -1,2 +1,12 @@
 @import "tailwindcss";
 
+:where(.css-dev-only-do-not-override-1a3rktk).ant-input-outlined {
+    background: #ffffff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #2A216D;
+}
+
+:where(.css-dev-only-do-not-override-1a3rktk).ant-input-outlined:focus, :where(.css-dev-only-do-not-override-1a3rktk).ant-input-outlined:focus-within{
+    border-color: #2A216D;
+}
