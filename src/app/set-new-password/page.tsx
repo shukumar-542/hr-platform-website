@@ -51,7 +51,7 @@ const SetNewPasswordPage = () => {
           <Button>Reset Password</Button>
         
         </Form>
-      </div>
+      </div> 
     </div>
   </div>
   )

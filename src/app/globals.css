@@ -10,3 +10,7 @@
 :where(.css-dev-only-do-not-override-1a3rktk).ant-input-outlined:focus, :where(.css-dev-only-do-not-override-1a3rktk).ant-input-outlined:focus-within{
     border-color: #2A216D;
 }
+
+::-webkit-scrollbar {
+    display: none;
+  }
