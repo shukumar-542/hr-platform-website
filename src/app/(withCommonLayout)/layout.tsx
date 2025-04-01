@@ -5,7 +5,7 @@ import React from "react";
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex justify-between items-center gap-0 bg-[#F2F2F2] ">
-      <div className="w-[10px] md:w-[300px] bg-[var(--primary-color)]  h-screen overflow-y-scroll  ">
+      <div className=" md:w-[300px] bg-[var(--primary-color)]  h-screen overflow-y-scroll  ">
         <Sidebar />
       </div>
 
