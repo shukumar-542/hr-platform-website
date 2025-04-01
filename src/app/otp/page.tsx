@@ -2,7 +2,7 @@
 import React, { useRef, useState } from "react";
 import bg from "../../assets/background.png";
 import Button from "@/components/Button/Button";
-import { Form, Input } from "antd";
+import { Form} from "antd";
 
 const OtpPage = () => {
   const [otp, setOtp] = useState(["", "", "", "", ""]);
@@ -47,8 +47,7 @@ const OtpPage = () => {
             email for the 5 digit code
           </p>
 
-          {/* Ensure Form has onFinish handler */}
-          <Form layout="vertical">
+          <Form layout="vertical" className="">
             <div className="flex justify-center gap-2 mb-6 mt-10">
               {otp.map((digit, index) => (
                 <input
