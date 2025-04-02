@@ -7,6 +7,8 @@ import img4 from "../../assets/work.png";
 import img5 from "../../assets/task.png";
 import Image from "next/image";
 import { FaUserLarge } from "react-icons/fa6";
+import TimeAndAttendance from "@/components/TimeAndAttendance/TimeAndAttendance";
+import ExpiringCertifications from "@/components/ExpiringCertifications/ExpiringCertifications";
 const page = () => {
   return (
     <div>
@@ -103,6 +105,13 @@ const page = () => {
           </p>
         </div>
       </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-8 gap-5">
+            <TimeAndAttendance/>
+            <ExpiringCertifications/>
+        </div>
+
+
     </div>
   );
 };
