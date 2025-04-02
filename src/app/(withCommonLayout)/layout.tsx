@@ -11,7 +11,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
 
       <div className=" w-full h-screen  overflow-y-scroll">
         <Header />
-        <div className="p-6 bg-[#F2F2F2] ">
+        <div className="p-5 bg-[#F5F3FF] h-full ">
           {children}
         </div>
       </div>

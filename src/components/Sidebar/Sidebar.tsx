@@ -57,13 +57,13 @@ const Sidebar: React.FC = () => {
 
             return (
               <div key={index}>
-                <Link
+                <Link 
                   href={item.path}
                   className={`cursor-pointer flex justify-start pl-8 mr-3 gap-2 items-center ${
                     isActive
-                      ? "bg-[#CD9B3A] text-white"
-                      : "bg-white text-[#CD9B3A]"
-                  } py-[12px] hover:bg-[#CD9B3A] hover:text-white rounded-tr-md rounded-br-md font-medium text-[16px]`}
+                      ? "bg-[#E6EBF1] text-[#2A216D] shadow-sm"
+                      : "bg-white text-[#5C5C5C]"
+                  } py-[12px] hover:bg-[#E6EBF1] hover:text-[#2A216D] rounded-tr-md rounded-br-md font-medium text-[16px]`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.icon}
