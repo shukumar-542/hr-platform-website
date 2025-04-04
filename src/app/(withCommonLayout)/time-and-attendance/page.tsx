@@ -1,9 +1,11 @@
 import React from 'react'
 
 const TimeAndAttendancePage = () => {
+
+
   return (
-    <div>TimeAndAttendancePage</div>
+    <div>TimeAndAtten dancePage</div>
   )
 }
 
-export default TimeAndAttendancePage
+export default TimeAndAttendancePage 

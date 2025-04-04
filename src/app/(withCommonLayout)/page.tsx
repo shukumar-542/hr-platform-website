@@ -12,7 +12,10 @@ import Image from "next/image";
 import { FaUserLarge } from "react-icons/fa6";
 import TimeAndAttendance from "@/components/TimeAndAttendance/TimeAndAttendance";
 import ExpiringCertifications from "@/components/ExpiringCertifications/ExpiringCertifications";
+import Link from "next/link";
+import TimeOffRequest from "@/components/TimeOffRequest/TimeOffRequest";
 const page = () => {
+  // ===== Time and attendance table data === //
   const data = [
     {
       key: "1",
@@ -42,8 +45,32 @@ const page = () => {
       status: "Present",
     },
   ];
+
+  //   ========= Time off request table data ==== //
+  const timeOffTableData = [
+    {
+      key: "#123",
+      employee: "Annette Black",
+      image: emp1,
+      requestDate: "12/03/25",
+      leaveType: "Sick Leave",
+      duration: "2 Days",
+      status: "Pending",
+      from : "12/03/25-14/02/25"
+    },
+    {
+      key: "#124",
+      employee: "Ranaid Richoards",
+      image: emp2,
+      requestDate: "12/03/25",
+      leaveType: "Sick Leave",
+      duration: "2 Days",
+      status: "Pending",
+      from : "12/03/25-14/02/25"
+    },
+  ];
   return (
-    <div>
+    <div className="pb-10">
       <div className="bg-white flex items-center gap-3 p-2 rounded-sm">
         <Image
           src={img}
@@ -137,18 +164,32 @@ const page = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 mt-8 gap-5">
-        <div className="bg-white shadow-2xl rounded-md p-2">
+        <div className="bg-white shadow-2xl rounded-md p-4">
           <div className="flex justify-between items-center">
             <p className="text-xl font-semibold">Time & Attendance</p>
-            <p className="text-[#03346E] font-semibold cursor-pointer">
-              View All
-            </p>
+            <Link href={"/time-and-attendance"}>
+              <p className="text-[#03346E] font-semibold cursor-pointer">
+                View All
+              </p>
+            </Link>
           </div>
-            <TimeAndAttendance data={data} />
+          <TimeAndAttendance data={data} />
         </div>
         <ExpiringCertifications />
       </div>
-      <div></div>
+      <div>
+        <div className="bg-white shadow-2xl rounded-md p-4 mt-10">
+          <div className="flex justify-between items-center">
+            <p className="text-xl font-semibold">Time-off Request</p>
+            <Link href={"/time-and-attendance"}>
+              <p className="text-[#03346E] font-semibold cursor-pointer">
+                View All
+              </p>
+            </Link>
+          </div>
+          <TimeOffRequest timeOffTableData={timeOffTableData}  />
+        </div>
+      </div>
     </div>
   );
 };
