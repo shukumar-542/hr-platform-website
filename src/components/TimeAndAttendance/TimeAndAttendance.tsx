@@ -17,7 +17,9 @@ interface EmployeeData {
   clockOut: string;
   status: string;
 }
-const TimeAndAttendance = () => {
+const TimeAndAttendance = ({data} : {data : EmployeeData []}) => {
+
+    console.log(data);
   const columns: ColumnsType<EmployeeData> = [
     {
       title: "Employee",
@@ -71,46 +73,13 @@ const TimeAndAttendance = () => {
     },
   ];
 
-  const data = [
-    {
-      key: "1",
-      employee: "Annette Black",
-      image: img,
-      shift: "Morning",
-      clockIn: "9:02 AM",
-      clockOut: "4:04 PM",
-      status: "Present",
-    },
-    {
-      key: "2",
-      employee: "Eleanor Pena",
-      image: img2,
-      shift: "Evening",
-      clockIn: "5:40 PM",
-      clockOut: "9:05 PM",
-      status: "Late",
-    },
-    {
-      key: "3",
-      employee: "Albert Flores",
-      image: img3,
-      shift: "Morning",
-      clockIn: "9:05 AM",
-      clockOut: "4:01 PM",
-      status: "Present",
-    },
-  ];
+ 
 
   return (
-    <div className="bg-white shadow-2xl rounded-md p-2">
-      <div className="flex justify-between items-center">
-        <p className="text-xl font-semibold">Time & Attendance</p>
-        <p className="text-[#03346E] font-semibold cursor-pointer">View All</p>
-      </div>
+    
       <div className="p-2">
         <Table columns={columns} dataSource={data} pagination={false} />
       </div>
-    </div>
   );
 };
 

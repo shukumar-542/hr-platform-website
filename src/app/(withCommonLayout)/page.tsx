@@ -5,11 +5,43 @@ import img2 from "../../assets/calendar_clock.png";
 import img3 from "../../assets/article.png";
 import img4 from "../../assets/work.png";
 import img5 from "../../assets/task.png";
+import emp1 from "../../assets/emp1.png";
+import emp2 from "../../assets/emp2.png";
+import emp3 from "../../assets/emp3.png";
 import Image from "next/image";
 import { FaUserLarge } from "react-icons/fa6";
 import TimeAndAttendance from "@/components/TimeAndAttendance/TimeAndAttendance";
 import ExpiringCertifications from "@/components/ExpiringCertifications/ExpiringCertifications";
 const page = () => {
+  const data = [
+    {
+      key: "1",
+      employee: "Annette Black",
+      image: emp1,
+      shift: "Morning",
+      clockIn: "9:02 AM",
+      clockOut: "4:04 PM",
+      status: "Present",
+    },
+    {
+      key: "2",
+      employee: "Eleanor Pena",
+      image: emp2,
+      shift: "Evening",
+      clockIn: "5:40 PM",
+      clockOut: "9:05 PM",
+      status: "Late",
+    },
+    {
+      key: "3",
+      employee: "Albert Flores",
+      image: emp3,
+      shift: "Morning",
+      clockIn: "9:05 AM",
+      clockOut: "4:01 PM",
+      status: "Present",
+    },
+  ];
   return (
     <div>
       <div className="bg-white flex items-center gap-3 p-2 rounded-sm">
@@ -21,7 +53,7 @@ const page = () => {
           alt="img"
         />
         <p className="text-xl font-semibold">Good Morning , Robert</p>
-      </div> 
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6  gap-5 mt-5">
         <div className="bg-white w-full text-center py-8 rounded-md shadow-xl space-y-8">
@@ -57,11 +89,13 @@ const page = () => {
             />
             <span>25</span>
           </p>
-          <p className="text-xl text-[#333333] font-semibold">Time-off Requests</p>
+          <p className="text-xl text-[#333333] font-semibold">
+            Time-off Requests
+          </p>
         </div>
         <div className="bg-white w-full text-center py-8 rounded-md shadow-xl space-y-8">
           <p className="flex items-center justify-center gap-2 text-[#03346E] text-3xl font-semibold">
-          <Image
+            <Image
               src={img3}
               height={200}
               width={200}
@@ -76,7 +110,7 @@ const page = () => {
         </div>
         <div className="bg-white w-full text-center py-8 rounded-md shadow-xl space-y-8">
           <p className="flex items-center justify-center gap-2 text-[#03346E] text-3xl font-semibold">
-          <Image
+            <Image
               src={img4}
               height={200}
               width={200}
@@ -85,13 +119,11 @@ const page = () => {
             />
             <span>07</span>
           </p>
-          <p className="text-2xl text-[#333333] font-semibold">
-            Open Position
-          </p>
+          <p className="text-2xl text-[#333333] font-semibold">Open Position</p>
         </div>
         <div className="bg-white w-full text-center py-8 rounded-md shadow-xl space-y-8">
           <p className="flex items-center justify-center gap-2 text-[#03346E] text-3xl font-semibold">
-          <Image
+            <Image
               src={img5}
               height={200}
               width={200}
@@ -100,20 +132,23 @@ const page = () => {
             />
             <span>23</span>
           </p>
-          <p className="text-2xl text-[#333333] font-semibold">
-            New Applicant
-          </p>
+          <p className="text-2xl text-[#333333] font-semibold">New Applicant</p>
         </div>
       </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 mt-8 gap-5">
-            <TimeAndAttendance/>
-            <ExpiringCertifications/>
+      <div className="grid grid-cols-1 md:grid-cols-2 mt-8 gap-5">
+        <div className="bg-white shadow-2xl rounded-md p-2">
+          <div className="flex justify-between items-center">
+            <p className="text-xl font-semibold">Time & Attendance</p>
+            <p className="text-[#03346E] font-semibold cursor-pointer">
+              View All
+            </p>
+          </div>
+            <TimeAndAttendance data={data} />
         </div>
-        <div>
-            
-        </div>
-
+        <ExpiringCertifications />
+      </div>
+      <div></div>
     </div>
   );
 };
