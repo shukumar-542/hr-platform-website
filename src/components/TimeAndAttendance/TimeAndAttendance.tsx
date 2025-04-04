@@ -19,7 +19,6 @@ interface EmployeeData {
 }
 const TimeAndAttendance = ({data} : {data : EmployeeData []}) => {
 
-    console.log(data);
   const columns: ColumnsType<EmployeeData> = [
     {
       title: "Employee",
@@ -77,8 +76,8 @@ const TimeAndAttendance = ({data} : {data : EmployeeData []}) => {
 
   return (
     
-      <div className="p-2">
-        <Table columns={columns} dataSource={data} pagination={false} />
+      <div className="p-2 overflow-x-auto">
+        <Table columns={columns} dataSource={data} pagination={false} scroll={{ x: "max-content" }} />
       </div>
   );
 };

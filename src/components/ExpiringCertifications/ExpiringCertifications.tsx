@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Table} from "antd";
+import { Table } from "antd";
 import { EyeOutlined } from "@ant-design/icons";
 import img1 from "../../assets/emp1.png";
 import img2 from "../../assets/emp2.png";
@@ -15,7 +15,6 @@ interface CertificationData {
   status: string;
 }
 
-
 const ExpiringCertifications = () => {
   const columns = [
     {
@@ -24,7 +23,7 @@ const ExpiringCertifications = () => {
       key: "employee",
       render: (_: any, record: CertificationData) => (
         <div className="flex items-center gap-2">
-         <img src={record.image.src} className="h-12 w-12" alt="img" />
+          <img src={record.image.src} className="h-12 w-12" alt="img" />
           <span>{record.employee}</span>
         </div>
       ),
@@ -44,7 +43,9 @@ const ExpiringCertifications = () => {
       dataIndex: "status",
       key: "status",
       render: (status: string) => (
-        <span className="bg-yellow-100 text-yellow-600 px-2 py-1 rounded-md font-medium">{status}</span>
+        <span className="bg-yellow-100 text-yellow-600 px-2 py-1 rounded-md font-medium">
+          {status}
+        </span>
       ),
     },
     {
@@ -90,7 +91,14 @@ const ExpiringCertifications = () => {
         <p className="text-xl font-semibold">Expiring Certifications</p>
         <p className="text-[#03346E] font-semibold cursor-pointer">View All</p>
       </div>
-      <Table columns={columns} dataSource={data} pagination={false} />
+      <div className="overflow-x-auto">
+        <Table
+          columns={columns}
+          dataSource={data}
+          pagination={false}
+          scroll={{ x: "max-content" }}
+        />
+      </div>
     </div>
   );
 };

@@ -104,8 +104,8 @@ const TimeOffRequest = ({
   ];
 
   return (
-    <div className="p-4">
-      <Table dataSource={timeOffTableData} columns={columns} pagination={false} />
+    <div className="p-4 overflow-x-auto">
+      <Table dataSource={timeOffTableData} columns={columns} pagination={false} scroll={{ x : "max-content"}} />
     </div>
   );
 };
