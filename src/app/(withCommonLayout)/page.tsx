@@ -21,7 +21,7 @@ const page = () => {
           alt="img"
         />
         <p className="text-xl font-semibold">Good Morning , Robert</p>
-      </div>
+      </div> 
 
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6  gap-5 mt-5">
         <div className="bg-white w-full text-center py-8 rounded-md shadow-xl space-y-8">
@@ -110,7 +110,9 @@ const page = () => {
             <TimeAndAttendance/>
             <ExpiringCertifications/>
         </div>
-
+        <div>
+            
+        </div>
 
     </div>
   );

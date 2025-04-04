@@ -9,7 +9,7 @@ import { MdOutlineDashboard } from "react-icons/md";
 interface MenuItem {
   path: string;
   label: string;
-  icon?: React.ReactNode; // ✅ Correct JSX type
+  icon?: React.ReactNode; 
   sub_menu?: MenuItem[];
 }
 

@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
-import { Table, Badge, Button } from "antd";
+import { Table} from "antd";
 import { EyeOutlined } from "@ant-design/icons";
-import Image from "next/image";
 import img1 from "../../assets/emp1.png";
 import img2 from "../../assets/emp2.png";
 import img3 from "../../assets/emp3.png";
@@ -25,7 +24,7 @@ const ExpiringCertifications = () => {
       key: "employee",
       render: (_: any, record: CertificationData) => (
         <div className="flex items-center gap-2">
-          <Image src={record.image} className="h-12 w-12 rounded-md" height={48} width={48} alt={record.employee} />
+         <img src={record.image.src} className="h-12 w-12" alt="img" />
           <span>{record.employee}</span>
         </div>
       ),
@@ -86,7 +85,7 @@ const ExpiringCertifications = () => {
     },
   ];
   return (
-    <div className="bg-white shadow-2xl p-3 rounded-md">
+    <div className="bg-white shadow-2xl p-3 rounded-md ">
       <div className="flex justify-between items-center">
         <p className="text-xl font-semibold">Expiring Certifications</p>
         <p className="text-[#03346E] font-semibold cursor-pointer">View All</p>
