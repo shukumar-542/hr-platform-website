@@ -41,7 +41,7 @@ const notifications = [
 
 const NotificationPage = () => {
   return (
-    <div className="bg-white p-4 rounded-md">
+    <div className="bg-white p-4 rounded-md h-full">
       <BackButton title="Notifications" />
       <p>Showing 48 Notifications</p>
       <div className="w-full  bg-white rounded shadow-md p-4">

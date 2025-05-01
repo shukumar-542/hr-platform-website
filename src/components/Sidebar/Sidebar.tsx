@@ -20,7 +20,7 @@ const Sidebar: React.FC = () => {
   const links: MenuItem[] = [
     { path: "/", label: "Dashboard", icon: <MdOutlineDashboard size={25} /> },
     {
-      path: "/requirement-hiring",
+      path: "/requirement-and-hiring",
       label: "Requirement & Hiring",
       icon: <MdOutlineDashboard size={25} />,
     },
