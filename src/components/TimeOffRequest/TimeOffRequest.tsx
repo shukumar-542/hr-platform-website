@@ -1,7 +1,6 @@
 "use client"
 import { Table } from "antd";
 import { ColumnsType } from "antd/es/table";
-import { StaticImageData } from "next/image";
 import React from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import { LuEye } from "react-icons/lu";

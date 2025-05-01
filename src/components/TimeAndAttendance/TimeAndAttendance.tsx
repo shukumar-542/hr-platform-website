@@ -55,10 +55,7 @@ const TimeAndAttendance = ({data} : {data : EmployeeData []}) => {
       dataIndex: "status",
       key: "status",
       render: (status: string) => (
-        <Badge
-          status={status === "Present" ? "success" : "warning"}
-          text={status}
-        />
+        <span className={`px-2 py-1 rounded-full text-sm font-medium inline-block w-20 text-center  ${status === "Present" ? "bg-[#E7F8EB] text-[#18C33D]" : status === "Late" ? "bg-[#FBF7E5] text-[#D9B800]" : "bg-[#F3E7F8] text-[#9018C3]" }`}>{status}</span>
       ),
     },
     {

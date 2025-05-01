@@ -44,6 +44,15 @@ const page = () => {
       clockOut: "4:01 PM",
       status: "Present",
     },
+    // {
+    //   key: "4",
+    //   employee: "Albert Flores",
+    //   image: emp3,
+    //   shift: "Morning",
+    //   clockIn: "9:05 AM",
+    //   clockOut: "4:01 PM",
+    //   status: "Leave",
+    // },
   ];
 
   //   ========= Time off request table data ==== //
