@@ -27,6 +27,7 @@ const TimeAndAttendancePage = () => {
       status: "Present",
     },
     {
+      
       key: "2",
       employee: "Eleanor Pena",
       image: emp2,
