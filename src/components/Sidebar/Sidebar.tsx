@@ -5,6 +5,9 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
 import { MdOutlineDashboard } from "react-icons/md";
+import { PiBagSimpleLight } from "react-icons/pi";
+import { GrDocumentUser } from "react-icons/gr";
+import { LiaBusinessTimeSolid } from "react-icons/lia";
 
 interface MenuItem {
   path: string;
@@ -22,8 +25,19 @@ const Sidebar: React.FC = () => {
     {
       path: "/requirement-and-hiring",
       label: "Requirement & Hiring",
-      icon: <MdOutlineDashboard size={25} />,
+      icon: <PiBagSimpleLight size={25} />,
     },
+    {
+      path: "/employee-management",
+      label: "Employee Management",
+      icon: <GrDocumentUser size={25} />,
+    },
+    {
+      path: "/shift-management",
+      label: "Shift Management",
+      icon: <LiaBusinessTimeSolid size={25} />,
+    },
+
   ];
 
   return (
