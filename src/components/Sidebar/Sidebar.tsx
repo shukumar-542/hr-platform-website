@@ -8,6 +8,7 @@ import { MdOutlineDashboard } from "react-icons/md";
 import { PiBagSimpleLight } from "react-icons/pi";
 import { GrDocumentUser } from "react-icons/gr";
 import { LiaBusinessTimeSolid } from "react-icons/lia";
+import { IoSettingsOutline } from "react-icons/io5";
 
 interface MenuItem {
   path: string;
@@ -36,6 +37,11 @@ const Sidebar: React.FC = () => {
       path: "/shift-management",
       label: "Shift Management",
       icon: <LiaBusinessTimeSolid size={25} />,
+    },
+    {
+      path: "/setting",
+      label: "Setting",
+      icon: <IoSettingsOutline size={25} />,
     },
 
   ];
