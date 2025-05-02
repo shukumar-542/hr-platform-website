@@ -67,7 +67,9 @@ const SettingPage = () => {
           </>
         ) : (
           <div className=" w-full max-w-xl">
-            <p className="text-xl font-semibold mb-12 text-center ">Change Password</p>
+            <p className="text-xl font-semibold mb-12 text-center ">
+              Change Password
+            </p>
             <Form layout="vertical">
               <Form.Item label="Current Password">
                 <Input.Password placeholder="*********" className="min-w-2xl" />
@@ -78,9 +80,11 @@ const SettingPage = () => {
               <Form.Item label="Confirm New Password">
                 <Input.Password placeholder="*********" className="min-w-2xl" />
               </Form.Item>
-              <button className="mt-20 bg-[#03346E] text-white px-6 py-2 rounded-sm cursor-pointer">
-              Change Password
-            </button>
+              <div className="flex justify-center">
+                <button className="bg-[#03346E] text-white px-6 py-2 rounded-sm cursor-pointer">
+                  Change Password
+                </button>
+              </div>
             </Form>
           </div>
         )}
