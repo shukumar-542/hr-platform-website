@@ -5,7 +5,7 @@ import { BsKey } from "react-icons/bs";
 import { FaRegUserCircle } from "react-icons/fa";
 import img from "../../../assets/profileHome.png";
 import { Form, Input } from "antd";
-
+import EditProfile from "@/components/EditProfile/EditProfile";
 const SettingPage = () => {
   const [setting, setSetting] = useState("profile");
 
@@ -16,7 +16,7 @@ const SettingPage = () => {
         <div
           onClick={() => setSetting("profile")}
           className={`flex items-center gap-2  cursor-pointer justify-center py-2 rounded-sm  ${
-            setting === "profile"
+            setting === "profile" || "editProfile"
               ? "bg-[#E6EBF1] text-[#03346E]"
               : "text-[#5C5C5C]"
           }`}
@@ -41,8 +41,8 @@ const SettingPage = () => {
             <div>
               <Image
                 src={img}
-                height={100}
-                width={100}
+                height={500}
+                width={130}
                 className="rounded-full"
                 alt="profile"
               />
@@ -61,11 +61,11 @@ const SettingPage = () => {
                 <span>+8801872999038</span>
               </p>
             </div>
-            <button className="mt-20 bg-[#03346E] text-white px-6 py-2 rounded-sm cursor-pointer">
+            <button onClick={()=>setSetting('editProfile') } className="mt-20 bg-[#03346E] text-white px-6 py-2 rounded-sm cursor-pointer">
               Edit
             </button>
           </>
-        ) : (
+        ) :  setting === "password" ? (
           <div className=" w-full max-w-xl">
             <p className="text-xl font-semibold mb-12 text-center ">
               Change Password
@@ -87,8 +87,9 @@ const SettingPage = () => {
               </div>
             </Form>
           </div>
-        )}
+        ) : <EditProfile/> }
       </div>
+      
     </div>
   );
 };
