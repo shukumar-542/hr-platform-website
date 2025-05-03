@@ -84,7 +84,8 @@ const ShiftManagementPage = () => {
       ];
     
   return (
-    <div className='bg-white p-4 rounded-md'>
+   <div>
+     <div className='bg-white p-4 rounded-md h-[88vh]'>
          <div className="flex items-center justify-between">
         <BackButton title="Shift Management" />
         <SearchBar handleSearch={handleSearch} value={searchValue} />
@@ -96,7 +97,9 @@ const ShiftManagementPage = () => {
 
       <Table columns={columns} dataSource={data} pagination={false} />
 
-      <Modal centered footer={false} open={openModal} onCancel={()=> setOpenModal(false)}>
+   
+    </div>
+    <Modal centered footer={false} open={openModal} onCancel={()=> setOpenModal(false)}>
             <p className='text-center font-semibold text-xl'>Add New</p>
             <Form layout='vertical'>
                 <Form.Item label="Shift Name">
@@ -114,7 +117,7 @@ const ShiftManagementPage = () => {
                 </div>
             </Form>
       </Modal>
-    </div>
+   </div>
   )
 }
 

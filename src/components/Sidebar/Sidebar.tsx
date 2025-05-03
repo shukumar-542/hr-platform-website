@@ -73,7 +73,7 @@ const Sidebar: React.FC = () => {
 
           {/* Sidebar Links */}
           {links.map((item, index) => {
-            const isActive = item.path === pathname;
+            const isActive = item.path === "/"  ? pathname === "/" : pathname.startsWith(item.path);
 
             return (
               <div key={index}>

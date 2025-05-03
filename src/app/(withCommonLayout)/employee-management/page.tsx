@@ -9,6 +9,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import img from '../../../assets/emp1.png'
 import img2 from '../../../assets/emp2.png'
 import { MdOutlineRemoveRedEye } from "react-icons/md";
+import { useRouter } from "next/navigation";
 interface Employee {
     key: string;
     employeeName: string;
@@ -21,6 +22,7 @@ interface Employee {
   }
 
 const EmployeeManagementPage = () => {
+  const router = useRouter(); 
   const [searchValue, setSearchValue] = useState("");
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -105,12 +107,12 @@ const EmployeeManagementPage = () => {
   ];
 
   return (
-    <div className="bg-white p-4 rounded-md">
+    <div className="bg-white p-4 rounded-md h-[87vh]">
       <div className="flex justify-between items-center">
         <BackButton title="Employee" />
         <SearchBar handleSearch={handleSearch} value={searchValue} />
       </div>
-      <button className="bg-[#03346E] text-white px-4 py-2 mt-2 rounded-sm cursor-pointer flex items-center  gap-2">
+      <button onClick={() => router.push("/employee-management/add-new-employee")} className="bg-[#03346E] text-white px-4 py-2 mt-2 rounded-sm cursor-pointer flex items-center  gap-2">
         <AiOutlinePlus />
         New Employee
       </button>
