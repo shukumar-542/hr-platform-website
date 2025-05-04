@@ -5,9 +5,11 @@ import place from "@/assets/hold.png";
 import Image from "next/image";
 import { FaPlus } from "react-icons/fa6";
 import { Checkbox, DatePicker, Form, Input, Select } from "antd";
+import { useRouter } from "next/navigation";
 const { Option } = Select;
 
 const AddEmployeePage = () => {
+  const router = useRouter()
   const [image, setImage] = useState<File | undefined>(undefined);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -177,10 +179,10 @@ const AddEmployeePage = () => {
           </div>
         </div>
           <div className="flex justify-center gap-5">
-            <button className="bg-[#03346E] text-white px-8 py-2 rounded-sm cursor-pointer">
+            <button className="bg-[#03346E] text-white px-8 py-2 rounded-sm cursor-pointer" >
               Add
             </button>
-            <button className="border border-[#EAE9F0] px-5 text-[#03346E] rounded-sm">Add & Create New Hire Packet</button>
+            <button type="button" onClick={()=> router.push('/employee-management/new-hire-packet')} className="border cursor-pointer border-[#EAE9F0] px-5 text-[#03346E] rounded-sm">Add & Create New Hire Packet</button>
             <button className="border border-[#EAE9F0] px-5 text-[#03346E] rounded-sm">Cancel</button>
           </div>
       </Form>
