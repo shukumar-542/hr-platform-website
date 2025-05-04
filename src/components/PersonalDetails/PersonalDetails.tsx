@@ -2,7 +2,7 @@ import React from "react";
 
 const PersonalDetails = () => {
   return (
-    <div className="border border-[#E1E1E1] shadow-xl rounded-md p-5 md:p-10 space-y-8 ">
+    <div className="border border-[#E1E1E1] shadow-2xs rounded-md p-5 md:p-10 space-y-8 ">
       <div>
         <p className="text-sm text-gray-500 mb-1">Full Name</p>
         <p className="border border-[#2A216D] px-3 py-2 rounded-md">Jemes Clarck</p>

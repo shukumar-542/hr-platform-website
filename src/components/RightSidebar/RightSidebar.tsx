@@ -3,7 +3,7 @@ import img from '@/assets/emp1.png'
 import Image from 'next/image'
 const RightSidebar = () => {
   return (
-    <div className="border border-[#E1E1E1] shadow-xl rounded-md p-2 md:p-10 w-full space-y-10">
+    <div className="border border-[#E1E1E1] shadow-2xs rounded-md p-2 md:p-10 w-full space-y-10">
       <div className="">
         <p className="text-sm text-gray-500">Email</p>
         <p className="font-semibold">smithjons@gmail.com</p>

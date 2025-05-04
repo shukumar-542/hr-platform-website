@@ -7,6 +7,7 @@ import { Tabs } from "antd";
 import type { TabsProps } from "antd";
 import PersonalDetails from "@/components/PersonalDetails/PersonalDetails";
 import RightSidebar from "@/components/RightSidebar/RightSidebar";
+import JobDetails from "@/components/JobDetails/JobDetails";
 
 const EmployeeDetailsPage = () => {
   const onChange = (key: string) => {
@@ -22,7 +23,7 @@ const EmployeeDetailsPage = () => {
     {
       key: "2",
       label: "Job",
-      children: "Content of Tab Pane 2",
+      children: <JobDetails/>,
     },
     {
       key: "3",

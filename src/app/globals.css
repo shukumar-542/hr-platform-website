@@ -35,3 +35,12 @@
     border: 1px solid #03346E;
     background: #ffffff;
 }
+
+:where(.css-dev-only-do-not-override-1a3rktk).ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #03346E;
+    text-shadow: 0 0 0.25px currentcolor;
+}
+
+:where(.css-dev-only-do-not-override-1a3rktk).ant-tabs .ant-tabs-ink-bar {
+    background: #03346E; 
+  }
