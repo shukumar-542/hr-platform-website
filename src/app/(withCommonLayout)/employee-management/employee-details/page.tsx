@@ -10,6 +10,9 @@ import RightSidebar from "@/components/RightSidebar/RightSidebar";
 import JobDetails from "@/components/JobDetails/JobDetails";
 import TimeOffDetails from "@/components/TimeOffDetails/TimeOffDetails";
 import TimeSheet from "@/components/TimeSheet/TimeSheet";
+import PayRoll from "@/components/PayRoll/PayRoll";
+import Training from "@/components/Training/Training";
+import DocumentLibrary from "@/components/DocumentLibrary/DocumentLibrary";
 
 const EmployeeDetailsPage = () => {
   const onChange = (key: string) => {
@@ -40,17 +43,17 @@ const EmployeeDetailsPage = () => {
     {
       key: "5",
       label: "Payroll",
-      children: "Content of Tab Pane 3",
+      children: <PayRoll/>,
     },
     {
       key: "6",
       label: "Document",
-      children: "Content of Tab Pane 3",
+      children:<DocumentLibrary/>,
     },
     {
       key: "7",
       label: "Training",
-      children: "Content of Tab Pane 3",
+      children: <Training/>,
     },
   ];
   return (

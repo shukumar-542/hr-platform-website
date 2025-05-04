@@ -44,3 +44,7 @@
 :where(.css-dev-only-do-not-override-1a3rktk).ant-tabs .ant-tabs-ink-bar {
     background: #03346E; 
   }
+  .ant-upload-wrapper .ant-upload-select {
+    display: block !important;
+    width: 100% !important;
+  }
