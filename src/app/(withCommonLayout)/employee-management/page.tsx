@@ -101,7 +101,7 @@ const EmployeeManagementPage = () => {
       title: "Details",
       key: "details",
       render: () => (
-       <button className="bg-[#03346E] text-white p-1 rounded-sm cursor-pointer"><MdOutlineRemoveRedEye size={20} /></button>
+       <button onClick={()=> router.push("/employee-management/employee-details")} className="bg-[#03346E] text-white p-1 rounded-sm cursor-pointer"><MdOutlineRemoveRedEye size={20} /></button>
       ),
     },
   ];
