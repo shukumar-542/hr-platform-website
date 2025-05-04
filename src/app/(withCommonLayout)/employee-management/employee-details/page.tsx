@@ -8,6 +8,8 @@ import type { TabsProps } from "antd";
 import PersonalDetails from "@/components/PersonalDetails/PersonalDetails";
 import RightSidebar from "@/components/RightSidebar/RightSidebar";
 import JobDetails from "@/components/JobDetails/JobDetails";
+import TimeOffDetails from "@/components/TimeOffDetails/TimeOffDetails";
+import TimeSheet from "@/components/TimeSheet/TimeSheet";
 
 const EmployeeDetailsPage = () => {
   const onChange = (key: string) => {
@@ -28,20 +30,25 @@ const EmployeeDetailsPage = () => {
     {
       key: "3",
       label: "Time Off",
-      children: "Content of Tab Pane 3",
+      children: <TimeOffDetails/>,
     },
     {
       key: "4",
+      label: "Time Sheet",
+      children: <TimeSheet/>,
+    },
+    {
+      key: "5",
       label: "Payroll",
       children: "Content of Tab Pane 3",
     },
     {
-      key: "5",
+      key: "6",
       label: "Document",
       children: "Content of Tab Pane 3",
     },
     {
-      key: "6",
+      key: "7",
       label: "Training",
       children: "Content of Tab Pane 3",
     },
