@@ -1,3 +1,4 @@
+"use client"
 import { Select, Table } from "antd";
 import React, { useState } from "react";
 

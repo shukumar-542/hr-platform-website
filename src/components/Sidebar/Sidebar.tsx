@@ -5,10 +5,11 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
 import { MdOutlineDashboard } from "react-icons/md";
-import { PiBagSimpleLight } from "react-icons/pi";
+import { PiBagSimpleLight, PiBookOpenText, PiCertificateLight } from "react-icons/pi";
 import { GrDocumentUser } from "react-icons/gr";
 import { LiaBusinessTimeSolid } from "react-icons/lia";
 import { IoSettingsOutline } from "react-icons/io5";
+import { SlCalender, SlGraduation } from "react-icons/sl";
 
 interface MenuItem {
   path: string;
@@ -22,7 +23,7 @@ const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  const role = "HR";
+  const role = "MANAGER";
 
   const links: MenuItem[] = [
     {
@@ -30,6 +31,36 @@ const Sidebar: React.FC = () => {
       label: "Dashboard",
       icon: <MdOutlineDashboard size={25} />,
       roles : ['HR' , "MANAGER" , "EMPLOYEE"]
+    },
+    {
+      path: "/team-members",
+      label: "Team Members",
+      icon: <GrDocumentUser size={25} />,
+      roles : ["MANAGER"]
+    },
+    {
+      path: "/schedule",
+      label: "Schedule",
+      icon: <SlCalender size={25} />,
+      roles : ["MANAGER"]
+    },
+    {
+      path: "/training-management",
+      label: "Training Management",
+      icon: <SlGraduation  size={25} />,
+      roles : ["MANAGER"]
+    },
+    {
+      path: "/training-lessons",
+      label: "Training Lessons",
+      icon: <PiBookOpenText  size={25} />,
+      roles : ["MANAGER"]
+    },
+    {
+      path: "/certifications",
+      label: "Certifications",
+      icon: <PiCertificateLight  size={25} />,
+      roles : ["MANAGER"]
     },
   
     {
