@@ -9,11 +9,11 @@ import img5 from "../../assets/shift.png";
 import { FaUserLarge } from "react-icons/fa6";
 import Link from "next/link";
 import TimeAndAttendance from "../TimeAndAttendance/TimeAndAttendance";
-import ExpiringCertifications from "../ExpiringCertifications/ExpiringCertifications";
 import emp1 from "../../assets/emp1.png";
 import emp2 from "../../assets/emp2.png";
 import emp3 from "../../assets/emp3.png";
 import TimeOffRequest from "../TimeOffRequest/TimeOffRequest";
+import ShiftSwapRequest from "../ShiftSwapRequest/ShiftSwapRequest";
 const ManagerDashboard = () => {
   const data = [
     {
@@ -45,29 +45,52 @@ const ManagerDashboard = () => {
     },
   ];
 
-    //   ========= Time off request table data ==== //
-    const timeOffTableData = [
-        {
-          key: "#123",
-          employee: "Annette Black",
-          image: emp1,
-          requestDate: "12/03/25",
-          leaveType: "Sick Leave",
-          duration: "2 Days",
-          status: "Pending",
-          from : "12/03/25-14/02/25"
-        },
-        {
-          key: "#124",
-          employee: "Ranaid Richoards",
-          image: emp2,
-          requestDate: "12/03/25",
-          leaveType: "Sick Leave",
-          duration: "2 Days",
-          status: "Pending",
-          from : "12/03/25-14/02/25"
-        },
-      ];
+  //   ========= Time off request table data ==== //
+  const timeOffTableData = [
+    {
+      key: "#123",
+      employee: "Annette Black",
+      image: emp1,
+      requestDate: "12/03/25",
+      leaveType: "Sick Leave",
+      duration: "2 Days",
+      status: "Pending",
+      from: "12/03/25-14/02/25",
+    },
+    {
+      key: "#124",
+      employee: "Ranaid Richoards",
+      image: emp2,
+      requestDate: "12/03/25",
+      leaveType: "Sick Leave",
+      duration: "2 Days",
+      status: "Pending",
+      from: "12/03/25-14/02/25",
+    },
+  ];
+
+  const shiftData = [
+    {
+      key: "1",
+      slNo: "#1233",
+      date: "12/03/25",
+      employee: "Annette Black",
+      image: emp2,
+      currentShift: "7 AM - 3 PM",
+      requestedSwap: "11 PM - 7 AM",
+      status: "approved",
+    },
+    {
+      key: "2",
+      slNo: "#1233",
+      date: "12/03/25",
+      employee: "Ronald Richards",
+      image: emp2,
+      currentShift: "3 PM - 11 PM",
+      requestedSwap: "7 AM - 3 PM",
+      status: "declined",
+    },
+  ];
   return (
     <div>
       <div className="bg-white flex items-center gap-3 p-2 rounded-sm">
@@ -179,7 +202,17 @@ const ManagerDashboard = () => {
           </div>
           <TimeAndAttendance data={data} />
         </div>
-        <ExpiringCertifications />
+        <div className="bg-white shadow-2xl rounded-md p-4">
+          <div className="flex justify-between items-center">
+            <p className="text-xl font-semibold">Shift Swap Request</p>
+            <Link href={"/shift-swap-request"}>
+              <p className="text-[#03346E] font-semibold cursor-pointer">
+                View All
+              </p>
+            </Link>
+          </div>
+          <ShiftSwapRequest shiftData={shiftData} />
+        </div>
       </div>
 
       {/* Time Off request section */}

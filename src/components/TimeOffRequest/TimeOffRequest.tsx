@@ -81,7 +81,7 @@ const TimeOffRequest = ({
         key : "approvedOrDeclined",
         render : (_, record)=>{
             return(
-                <div className="flex gap-2 ">
+                <div className="flex justify-center gap-2 ">
                     <button className="bg-[#03346E] text-white p-2 rounded-md shadow-2xl"><MdCheck size={20} /></button>
                     <button className="bg-red-600 text-white p-2 rounded-md shadow-2xl"><IoCloseOutline size={20} /></button>
                 </div>
@@ -95,7 +95,7 @@ const TimeOffRequest = ({
         render : (_, record)=>{
             return(
                 <div className="flex gap-2">
-                    <button className="bg-[#03346E] text-white p-2 rounded-md shadow-2xl"><LuEye size={20} /></button>
+                    <button className="bg-[#03346E] text-white p-2 rounded-md shadow-2xl cursor-pointer"><LuEye size={20} /></button>
                 </div>
             )
         }

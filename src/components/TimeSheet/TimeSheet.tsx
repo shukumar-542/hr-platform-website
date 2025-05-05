@@ -1,4 +1,4 @@
-import { Select, Table, Tag } from "antd";
+import { Select, Table } from "antd";
 import React, { useState } from "react";
 
 const { Option } = Select;

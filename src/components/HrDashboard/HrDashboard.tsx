@@ -183,7 +183,7 @@ const HrDashboard = () => {
       <div className="bg-white shadow-2xl rounded-md p-4 mt-10">
         <div className="flex justify-between items-center">
           <p className="text-xl font-semibold">Time-off Request</p>
-          <Link href={"/time-and-attendance"}>
+          <Link href={"/time-off-request"}>
             <p className="text-[#03346E] font-semibold cursor-pointer">
               View All
             </p>
