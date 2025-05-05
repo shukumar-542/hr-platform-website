@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import { usePathname } from "next/navigation"; 
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
 import { MdOutlineDashboard } from "react-icons/md";
@@ -13,38 +13,53 @@ import { IoSettingsOutline } from "react-icons/io5";
 interface MenuItem {
   path: string;
   label: string;
-  icon?: React.ReactNode; 
+  icon?: React.ReactNode;
   sub_menu?: MenuItem[];
+  roles : string[]
 }
 
 const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
+  const role = "HR";
+
   const links: MenuItem[] = [
-    { path: "/", label: "Dashboard", icon: <MdOutlineDashboard size={25} /> },
+    {
+      path: "/",
+      label: "Dashboard",
+      icon: <MdOutlineDashboard size={25} />,
+      roles : ['HR' , "MANAGER" , "EMPLOYEE"]
+    },
+  
     {
       path: "/requirement-and-hiring",
       label: "Requirement & Hiring",
       icon: <PiBagSimpleLight size={25} />,
+      roles : ['HR']
     },
     {
       path: "/employee-management",
       label: "Employee Management",
       icon: <GrDocumentUser size={25} />,
+      roles : ['HR']
     },
     {
       path: "/shift-management",
       label: "Shift Management",
       icon: <LiaBusinessTimeSolid size={25} />,
+      roles : ['HR']
     },
     {
       path: "/setting",
       label: "Setting",
       icon: <IoSettingsOutline size={25} />,
+      roles : ['MANAGER', "HR", "EMPLOYEE"]
     },
-
   ];
+
+    // Filter links based on user role
+    const visibleLinks = links.filter(link => link.roles.includes(role));
 
   return (
     <>
@@ -72,12 +87,15 @@ const Sidebar: React.FC = () => {
           </div>
 
           {/* Sidebar Links */}
-          {links.map((item, index) => {
-            const isActive = item.path === "/"  ? pathname === "/" : pathname.startsWith(item.path);
+          {visibleLinks.map((item, index) => {
+            const isActive =
+              item.path === "/"
+                ? pathname === "/"
+                : pathname.startsWith(item.path);
 
             return (
               <div key={index}>
-                <Link 
+                <Link
                   href={item.path}
                   className={`cursor-pointer flex justify-start pl-8 mr-3 gap-2 items-center ${
                     isActive
