@@ -9,6 +9,7 @@ import type { ColumnsType } from "antd/es/table";
 import img1 from "../../../assets/emp1.png";
 import img2 from "../../../assets/emp2.png";
 import Image, { StaticImageData } from "next/image";
+import AddJobOpeningModal from "@/components/AddJobOpeningModal/AddJobOpeningModal";
 
 interface Candidate {
   key: string;
@@ -52,6 +53,7 @@ const data: Candidate[] = [
 ];
 const RequirementAndHiring = () => {
   const [searchValue, setSearchValue] = useState("");
+  const [openModal, setOpenModal] = useState(false)
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e);
@@ -115,12 +117,12 @@ const RequirementAndHiring = () => {
     },
   ];
   return (
-    <div className="bg-white p-4 rounded-md">
+    <div className="bg-white p-4 rounded-md min-h-[87vh]">
       <div className="flex items-center justify-between">
         <BackButton title="Job Opening" />
         <SearchBar handleSearch={handleSearch} value={searchValue} />
       </div>
-      <button className="bg-[#03346E] text-white px-4 py-2 mt-2 rounded-sm cursor-pointer flex items-center  gap-2">
+      <button onClick={()=> setOpenModal(true)} className="bg-[#03346E] text-white px-4 py-2 mt-2 rounded-sm cursor-pointer flex items-center  gap-2">
         <AiOutlinePlus />
         Add Job Opening
       </button>
@@ -131,6 +133,7 @@ const RequirementAndHiring = () => {
         pagination={false}
         className="mt-6"
       />
+      <AddJobOpeningModal openModal={openModal} setOpenModal={setOpenModal} />
     </div>
   );
 };
