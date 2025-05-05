@@ -5,7 +5,7 @@ import ManagerDashboard from "@/components/ManagerDashboard/ManagerDashboard";
 import EmployeeDashboard from "@/components/EmployeeDashboard/EmployeeDashboard";
 
 type UserRole = "HR" | "MANAGER" | "EMPLOYEE";
-const userRole = "HR" as UserRole;
+const userRole = "MANAGER" as UserRole;
 
 const Page = () => {
   const renderContent = () => {

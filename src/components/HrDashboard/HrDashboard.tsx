@@ -45,15 +45,7 @@ const HrDashboard = () => {
       clockOut: "4:01 PM",
       status: "Present",
     },
-    // {
-    //   key: "4",
-    //   employee: "Albert Flores",
-    //   image: emp3,
-    //   shift: "Morning",
-    //   clockIn: "9:05 AM",
-    //   clockOut: "4:01 PM",
-    //   status: "Leave",
-    // },
+   
   ];
 
   //   ========= Time off request table data ==== //
@@ -80,7 +72,7 @@ const HrDashboard = () => {
     },
   ];
   return (
-    <div className="pb-10">
+    <div className="">
     <div className="bg-white flex items-center gap-3 p-2 rounded-sm">
       <Image
         src={img}
