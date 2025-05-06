@@ -3,7 +3,7 @@ import { BackButton } from '@/components/BackButton/BackButton'
 import React from 'react'
 import img from '@/assets/emp2.png'
 import Image from 'next/image'
-import { Space, Table, Tag } from 'antd';
+import { Space, Table} from 'antd';
 import { IoEyeOutline } from 'react-icons/io5';
 
 // Define the data type for the table
