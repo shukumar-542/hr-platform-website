@@ -1,11 +1,12 @@
 "use client"
 import React from 'react'
-import img from '@/assets/cv.png'
 import { BackButton } from '@/components/BackButton/BackButton'
 import user from '@/assets/emp3.png'
 import Image from 'next/image'
 import { Select, Tabs } from 'antd'
 import CandidateDetails from '@/components/CandidateDetails/CandidateDetails'
+import CandidateResume from '@/components/CandidateResume/CandidateResume'
+import CandidatesCoverLetter from '@/components/CandidatesCoverLetter/CandidatesCoverLetter'
 const CandidatesDetailsPage = () => {
   const statusOptions = [
     { label: "New", value: "New" },
@@ -18,12 +19,12 @@ const CandidatesDetailsPage = () => {
     {
       key: "1",
       label: <p className="">Resume</p>,
-      children: <p>Resume </p>,
+      children: <CandidateResume/>,
     },
     {
       key: "2",
       label: "Cover Letter",
-      children: <p>Cover letter</p>,
+      children: <CandidatesCoverLetter/>,
     },
   
    
