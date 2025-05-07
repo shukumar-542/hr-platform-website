@@ -67,7 +67,7 @@ const CandidatesDetailsPage = () => {
         <div className="col-span-2">
           <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
         </div>
-        <div className="md:pt-12 md:mt-0">
+        <div className=" md:mt-12 bg-[#F7F7F7]">
           <CandidateDetails/>
         </div>
       </div>

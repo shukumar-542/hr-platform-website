@@ -2,7 +2,7 @@ import React from 'react'
 
 const CandidateDetails = () => {
   return (
-    <div className="border border-[#E1E1E1] shadow-2xs rounded-md p-2 md:p-10 w-full space-y-10">
+    <div className=" shadow-2xs rounded-md p-2 md:p-10 w-full space-y-10">
       <div className="">
         <p className="text-sm text-gray-500">Email</p>
         <p className="font-semibold">smithjons@gmail.com</p>
