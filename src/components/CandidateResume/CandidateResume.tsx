@@ -6,7 +6,7 @@ import { MdArrowBackIosNew } from "react-icons/md";
 
 const CandidateResume = () => {
   return (
-    <div className="bg-[#F7F7F7] rounded-md shadow-2xl p-5">
+    <div className="bg-[#F7F7F7] rounded-md shadow-xl p-5 mb-5 md:mb-0">
       <div className="flex justify-end">
         <div className="flex items-center  gap-2">
           <p>page 1 of 1 </p>
@@ -22,7 +22,7 @@ const CandidateResume = () => {
         src={img}
         height={800}
         width={800}
-        className="w-full h-[900px] p-5"
+        className="w-full  md:h-[900px] p-5"
         alt="img"
       />
     </div>

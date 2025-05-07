@@ -2,7 +2,7 @@ import React from "react";
 
 const CandidatesCoverLetter = () => {
   return (
-    <div className="bg-[#F7F7F7] rounded-xl p-8 space-y-4">
+    <div className="bg-[#F7F7F7] rounded-xl shadow-xl p-2 md:p-8 space-y-4 mb-5">
       <div className="space-y-1">
         <p>John Doe</p>
         <p>123 Main Street</p>
