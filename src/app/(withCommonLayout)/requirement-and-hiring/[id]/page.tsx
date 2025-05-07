@@ -2,11 +2,87 @@ import { BackButton } from "@/components/BackButton/BackButton";
 import React from "react";
 import img from "@/assets/emp1.png";
 import Image from "next/image";
+import { Table } from "antd";
+
+interface Candidate {
+  id: string;
+  name: string;
+  location: string;
+  appliedOn: string;
+  status: string;
+}
+
 const JobDetailsPage = () => {
+  const candidates: Candidate[] = [
+    {
+      id: "#1234",
+      name: "Annette Black",
+      location: "Royal Ln. Mesa, New Jersey",
+      appliedOn: "Jan 21, 2025",
+      status: "New",
+    },
+    {
+      id: "#1233",
+      name: "Ronald Richards",
+      location: "Preston Rd. Inglewood, Maine",
+      appliedOn: "Jan 3, 2025",
+      status: "Reviewed",
+    },
+    {
+      id: "#1235",
+      name: "Eleanor Pena",
+      location: "Thornridge Cir. Shiloh, Hawaii",
+      appliedOn: "Feb 4, 2025",
+      status: "New",
+    },
+    {
+      id: "#1238",
+      name: "Albert Flores",
+      location: "Thornridge Cir. Syracuse, Connecticut",
+      appliedOn: "Jan 21, 2025",
+      status: "Reviewed",
+    },
+    {
+      id: "#1237",
+      name: "Dianne Russell",
+      location: "Washington Ave. Manchester, Kentucky",
+      appliedOn: "Mar 21, 2025",
+      status: "Interviewed",
+    },
+  ];
+
+  const columns = [
+    {
+      title: "SL. No.",
+      dataIndex: "id",
+      key: "id",
+    },
+    {
+      title: "Candidate Name",
+      dataIndex: "name",
+      key: "name",
+    },
+    {
+      title: "Location",
+      dataIndex: "location",
+      key: "location",
+    },
+    {
+      title: "Applied On",
+      dataIndex: "appliedOn",
+      key: "appliedOn",
+    },
+    {
+      title: "Status",
+      dataIndex: "status",
+      key: "status",
+    },
+  ];
+
   return (
     <div className="bg-white p-5 rounded-md min-h-[87vh]">
       <BackButton title="Job Details" />
-      {/* Project details and team lead details */}
+      {/* Project Info and team lead details */}
       <div className="border-b border-[#DFDFDF] pb-8">
         <p className="text-2xl font-semibold mt-5">Financial Analyst</p>
         <p className=" text-[#333333]">
@@ -39,8 +115,60 @@ const JobDetailsPage = () => {
         </div>
       </div>
 
+      {/* Job Details and employee type  */}
 
-      
+      <div className="flex justify-between mt-10 gap-5">
+        <div className="space-y-2 border-r border-[#DFDFDF] pr-5 w-full">
+          <p className="text-xl font-semibold">Details</p>
+          <p>
+            Please call the property owner to make an appointment, take some
+            picture and videos of the property location. Please call the
+            property owner to make an appointment, take some picture and videos
+            of the property location. Please call the property owner to make an
+            appointment, take some picture and videos of the property location.
+          </p>
+          <p>
+            Please call the property owner to make an appointment, take some
+            picture and videos of the property location. Please call the
+            property owner to make an appointment, take some picture and videos
+            of the property location. Please call the property owner to make an
+            appointment, take some picture and videos of the property location.
+            Please call the property owner to make an appointment, take some
+            picture and videos of the property location. Please call the
+            property owner to make an appointment, take some picture and videos
+            of the property location.{" "}
+          </p>
+        </div>
+        <div className="w-full space-y-8 ">
+          <p className="flex justify-between items-center ">
+            <span>Employee Type</span>{" "}
+            <span className="font-semibold">Full time</span>
+          </p>
+          <p className="flex justify-between items-center ">
+            <span>Department:</span>{" "}
+            <span className="font-semibold">Finance</span>
+          </p>
+          <p className="flex justify-between items-center ">
+            <span>Minimum Experience:</span>{" "}
+            <span className="font-semibold">2 Years</span>
+          </p>
+          <p className="flex justify-between items-center ">
+            <span>Compensation</span>{" "}
+            <span className="font-semibold">10$-20$/hour</span>
+          </p>
+        </div>
+      </div>
+
+      {/* Candidates details */}
+      <div className="pt-10">
+        <p className="text-xl font-semibold mb-5">Candidates</p>
+        <Table
+          dataSource={candidates}
+          columns={columns}
+          rowKey="id"
+          pagination={false}
+        />
+      </div>
     </div>
   );
 };
