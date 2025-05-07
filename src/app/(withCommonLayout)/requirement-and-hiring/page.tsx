@@ -10,6 +10,7 @@ import img1 from "../../../assets/emp1.png";
 import img2 from "../../../assets/emp2.png";
 import Image, { StaticImageData } from "next/image";
 import AddJobOpeningModal from "@/components/AddJobOpeningModal/AddJobOpeningModal";
+import Link from "next/link";
 
 interface Candidate {
   key: string;
@@ -71,7 +72,8 @@ const RequirementAndHiring = () => {
       dataIndex: "position",
       key: "position",
       render: (text) => (
-        <span className="text-[#03346E] cursor-pointer">{text}</span>
+        
+        <Link href={"/requirement-and-hiring/:id"}><span className="text-[#03346E] cursor-pointer">{text}</span></Link>
       ),
     },
     {

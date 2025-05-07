@@ -23,7 +23,7 @@ const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  const role = "MANAGER";
+  const role = "HR";
 
   const links: MenuItem[] = [
     {
