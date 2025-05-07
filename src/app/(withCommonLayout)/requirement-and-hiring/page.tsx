@@ -54,7 +54,7 @@ const data: Candidate[] = [
 ];
 const RequirementAndHiring = () => {
   const [searchValue, setSearchValue] = useState("");
-  const [openModal, setOpenModal] = useState(false)
+  const [openModal, setOpenModal] = useState(false);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e);
@@ -72,8 +72,9 @@ const RequirementAndHiring = () => {
       dataIndex: "position",
       key: "position",
       render: (text) => (
-        
-        <Link href={"/requirement-and-hiring/:id"}><span className="text-[#03346E] cursor-pointer">{text}</span></Link>
+        <Link href={"/requirement-and-hiring/:id"}>
+          <span className="text-[#03346E] cursor-pointer">{text}</span>
+        </Link>
       ),
     },
     {
@@ -114,27 +115,42 @@ const RequirementAndHiring = () => {
       dataIndex: "status",
       key: "status",
       render: (status) => (
-        <p className={` text-center inline-block px-4 py-1 rounded-full ${status === "Open" ? "bg-[#E7F8EB] text-[#18C33D]" : "bg-[#F8E7E7] text-[#D80027]"}`}>{status}</p>
+        <p
+          className={` text-center inline-block px-4 py-1 rounded-full ${
+            status === "Open"
+              ? "bg-[#E7F8EB] text-[#18C33D]"
+              : "bg-[#F8E7E7] text-[#D80027]"
+          }`}
+        >
+          {status}
+        </p>
       ),
     },
   ];
   return (
     <div className="bg-white p-4 rounded-md min-h-[87vh]">
-      <div className="flex items-center justify-between">
+      <div className="md:flex  items-center justify-between">
         <BackButton title="Job Opening" />
         <SearchBar handleSearch={handleSearch} value={searchValue} />
       </div>
-      <button onClick={()=> setOpenModal(true)} className="bg-[#03346E] text-white px-4 py-2 mt-2 rounded-sm cursor-pointer flex items-center  gap-2">
+      <button
+        onClick={() => setOpenModal(true)}
+        className="bg-[#03346E] text-white px-4 py-2 mt-2 rounded-sm cursor-pointer flex items-center  gap-2"
+      >
         <AiOutlinePlus />
         Add Job Opening
       </button>
 
-      <Table
-        columns={columns}
-        dataSource={data}
-        pagination={false}
-        className="mt-6"
-      />
+      <div className="p-2 overflow-x-auto">
+        <Table
+          columns={columns}
+          dataSource={data}
+          pagination={false}
+          className="mt-6"
+          scroll={{x  :"max-content"}}
+        />
+      </div>
+
       <AddJobOpeningModal openModal={openModal} setOpenModal={setOpenModal} />
     </div>
   );
