@@ -1,0 +1,78 @@
+"use client"
+import React from 'react'
+import img from '@/assets/cv.png'
+import { BackButton } from '@/components/BackButton/BackButton'
+import user from '@/assets/emp3.png'
+import Image from 'next/image'
+import { Select, Tabs } from 'antd'
+import CandidateDetails from '@/components/CandidateDetails/CandidateDetails'
+const CandidatesDetailsPage = () => {
+  const statusOptions = [
+    { label: "New", value: "New" },
+    { label: "Reviewed", value: "Reviewed" },
+    { label: "Interviewed", value: "Interviewed" },
+  ];
+
+
+  const items = [
+    {
+      key: "1",
+      label: <p className="">Resume</p>,
+      children: <p>Resume </p>,
+    },
+    {
+      key: "2",
+      label: "Cover Letter",
+      children: <p>Cover letter</p>,
+    },
+  
+   
+  ];
+
+  const onChange = (key: string) => {
+    console.log(key);
+  };
+
+
+
+  return (
+    <div className='bg-white p-4 rounded-md  min-h-[87vh]'>
+      <BackButton title='Candidates Details' />
+
+      <div className='flex items-center justify-between mt-5'>
+        <div className='flex items-center gap-2'>
+          <Image src={user} height={100} width={100} alt='img' className='rounded-full w-14 h-14' />
+          <div>
+            <p className='text-xl font-semibold'>James Willams</p>
+            <p>Applied on 22 January, 2025</p>
+          </div>
+        </div>
+        <div className='flex items-end gap-5'>
+          <button className='bg-[#03346E] px-4 py-1 text-white rounded-sm'>Hire</button>
+          <div>
+            <p className='mb-2'>Status</p>
+            <Select defaultValue={"New"}
+             style={{ width: 200 }}
+            options={statusOptions}
+              />
+          </div>
+        </div>
+      </div>
+
+
+      {/* Resume and cover letter details */}
+
+      <div className="grid grid-cols-1 lg:grid-cols-3  md:gap-6 mt-10">
+        <div className="col-span-2">
+          <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
+        </div>
+        <div className="md:pt-12 md:mt-0">
+          <CandidateDetails/>
+        </div>
+      </div>
+
+    </div>
+  )
+}
+
+export default CandidatesDetailsPage

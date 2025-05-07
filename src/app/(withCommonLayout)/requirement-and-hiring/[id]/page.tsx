@@ -1,8 +1,11 @@
+"use client"
 import { BackButton } from "@/components/BackButton/BackButton";
 import React from "react";
 import img from "@/assets/emp1.png";
 import Image from "next/image";
 import { Table } from "antd";
+import Link from "next/link";
+import { ColumnsType } from "antd/es/table";
 
 interface Candidate {
   id: string;
@@ -51,7 +54,7 @@ const JobDetailsPage = () => {
     },
   ];
 
-  const columns = [
+  const columns : ColumnsType<Candidate> = [
     {
       title: "SL. No.",
       dataIndex: "id",
@@ -61,6 +64,13 @@ const JobDetailsPage = () => {
       title: "Candidate Name",
       dataIndex: "name",
       key: "name",
+      render: (text: any, record: Candidate) => {
+        return (
+          <Link href={`/requirement-and-hiring/:[id]/:[userId]`}>
+            <span className="text-[#03346E] cursor-pointer">{text}</span>
+          </Link>
+        );
+      }
     },
     {
       title: "Location",
