@@ -10,6 +10,7 @@ import { GrDocumentUser } from "react-icons/gr";
 import { LiaBusinessTimeSolid } from "react-icons/lia";
 import { IoSettingsOutline } from "react-icons/io5";
 import { SlCalender, SlGraduation } from "react-icons/sl";
+import { CiTimer } from "react-icons/ci";
 
 interface MenuItem {
   path: string;
@@ -23,7 +24,7 @@ const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  const role = "HR";
+  const role = "EMPLOYEE";
 
   const links: MenuItem[] = [
     {
@@ -81,6 +82,19 @@ const Sidebar: React.FC = () => {
       icon: <LiaBusinessTimeSolid size={25} />,
       roles : ['HR']
     },
+    {
+      path: "/shift-management",
+      label: "Shift Management",
+      icon: <LiaBusinessTimeSolid size={25} />,
+      roles : ['HR']
+    },
+    {
+      path: "/attendance",
+      label: "Attendance",
+      icon: <CiTimer size={25} />,
+      roles : ['EMPLOYEE']
+    },
+
     {
       path: "/setting",
       label: "Setting",
