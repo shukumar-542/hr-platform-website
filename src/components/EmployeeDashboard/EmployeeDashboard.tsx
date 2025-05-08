@@ -33,7 +33,7 @@ const EmployeeDashboard = () => {
            
           </div>
         </div>
-        <div className="col-span-12 md:col-span-4 " >
+        <div className="col-span-12 md:col-span-4 space-y-4 " >
           <div className="bg-white p-4 rounded-md">
             <p className="text-xl font-semibold">Training Summery</p>
             <div className="flex justify-between py-5">
@@ -52,8 +52,23 @@ const EmployeeDashboard = () => {
               
             </div>
           </div>
-          <div>
-            <p>Job Application Summery</p>
+          <div className="bg-white p-4 rounded-md">
+            <p className="text-xl font-semibold">Job Application Summery</p>
+            <div className="flex justify-between py-5">
+              <div className="flex flex-col justify-center items-center">
+                <p className="bg-[#DAC800] text-center p-2 rounded-full h-10 w-10 text-white font-semibold">24</p>
+                <p className="font-semibold">Applied</p>
+              </div>
+              <div className="flex flex-col justify-center items-center">
+                <p className="bg-[#0D9900] text-center p-2 rounded-full h-10 w-10 text-white font-semibold">7</p>
+                <p className="font-semibold">Interviewed</p>
+              </div>
+              <div className="flex flex-col justify-center items-center">
+                <p className="bg-[#D80027] text-center p-2 rounded-full h-10 w-10 text-white font-semibold">17</p>
+                <p className="font-semibold">Rejected</p>
+              </div>
+              
+            </div>
           </div>
         </div>
         <div className="col-span-12 md:col-span-4"></div>
