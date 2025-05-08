@@ -176,7 +176,7 @@ const TeamMembersPage = () => {
       <div className="flex justify-between items-center mb-4">
         <BackButton title="Teams Members" />
         <SearchBar handleSearch={handleSearch} value={searchValue} />
-      </div>
+      </div> 
 
       <Table columns={columns} dataSource={data} pagination={false} />
 
