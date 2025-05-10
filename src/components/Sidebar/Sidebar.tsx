@@ -132,7 +132,7 @@ const Sidebar: React.FC = () => {
           roles: ["EMPLOYEE"],
         },
         {
-          path: "/training/Training-and-certification",
+          path: "/training/training-and-certificates",
           label: "training-certification",
           icon: <></>,
           roles: ["EMPLOYEE"],
