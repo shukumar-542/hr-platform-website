@@ -3,6 +3,8 @@ import React from "react";
 import img from "@/assets/profileHome.png";
 import Image from "next/image";
 import manager from "@/assets/manager.png";
+import { FcCalendar } from "react-icons/fc";
+import Link from "next/link";
 
 const EmployeeDashboard = () => {
   return (
@@ -101,6 +103,36 @@ const EmployeeDashboard = () => {
                 alt="img"
               />
               <p className="text-xl font-semibold">Annette Black</p>
+            </div>
+          </div>
+          {/* Time off section */}
+          <div className="bg-white rounded-md p-4 pb-16 mt-5">
+            <div className="flex justify-between items-center   ">
+              <div className="flex items-center gap-2">
+                <FcCalendar />
+                <p>My Time Off :</p>
+              </div>
+              <Link href={"/employee-time-off-request"}>
+                <button className="cursor-pointer text-[#03346E] font-medium">
+                  View & Apply
+                </button>
+              </Link>
+            </div>
+            <p className="mt-5">You have total 33 annual days left </p>
+            <p className="font-medium mt-4">Leave Balance Summary</p>
+            <div className="flex items-center justify-between mt-2">
+              <div>
+                <p className="font-medium">Total Leave</p>
+                <p className="text-sm mt-2">45 Days</p>
+              </div>
+              <div>
+                <p className="font-medium">Taken</p>
+                <p className="text-sm mt-2">12 days</p>
+              </div>
+              <div>
+                <p className="font-medium">Available</p>
+                <p className="text-sm mt-2">33 days</p>
+              </div>
             </div>
           </div>
         </div>
