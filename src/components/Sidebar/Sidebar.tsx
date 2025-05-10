@@ -15,7 +15,7 @@ import { GrDocumentUser } from "react-icons/gr";
 import { LiaBusinessTimeSolid } from "react-icons/lia";
 import { IoBagOutline, IoSettingsOutline } from "react-icons/io5";
 import { SlCalender, SlGraduation } from "react-icons/sl";
-import { CiTimer } from "react-icons/ci";
+import { CiDollar, CiTimer } from "react-icons/ci";
 import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 
@@ -112,7 +112,7 @@ const Sidebar: React.FC = () => {
           roles: ["EMPLOYEE"],
         },
         {
-          path: "/apply-for-job ",
+          path: "/job/application-center ",
           label: "Application Center",
           icon: <></>,
           roles: ["EMPLOYEE"],
@@ -138,6 +138,12 @@ const Sidebar: React.FC = () => {
           roles: ["EMPLOYEE"],
         },
       ],
+      roles: ["EMPLOYEE"],
+    },
+    {
+      path: "/payroll",
+      label: "Payroll",
+      icon: <CiDollar size={25} />,
       roles: ["EMPLOYEE"],
     },
     {
