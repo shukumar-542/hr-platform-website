@@ -106,7 +106,7 @@ const Sidebar: React.FC = () => {
       icon: <IoBagOutline size={25} />,
       sub_menu: [
         {
-          path: "/apply-for-job",
+          path: "/job/apply-for-job",
           label: "Apply for job",
           icon: <></>,
           roles: ["EMPLOYEE"],
