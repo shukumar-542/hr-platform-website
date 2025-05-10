@@ -7,6 +7,8 @@ import { CiEdit } from "react-icons/ci";
 import { IoEyeOutline } from "react-icons/io5";
 import { Option } from "antd/es/mentions";
 import { UploadOutlined } from "@ant-design/icons";
+import certificaate from "@/assets/certtificate.png";
+import Image from "next/image";
 
 interface Training {
   slNo: string;
@@ -20,6 +22,7 @@ interface Training {
 const TrainingAndCertificatesPage = () => {
   const [searchValue, setSearchValue] = useState("");
   const [openModal, setOpenModal] = useState(false);
+  const [openCertificateModal, setOpenCertificateModal] = useState(false);
   const [form] = Form.useForm();
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e);
@@ -131,7 +134,10 @@ const TrainingAndCertificatesPage = () => {
       key: "action",
       render: () => (
         <div className="flex items-center gap-2 text-white">
-          <button className="rounded-xs p-1 cursor-pointer bg-[#03346E]">
+          <button
+            onClick={() => setOpenCertificateModal(true)}
+            className="rounded-xs p-1 cursor-pointer bg-[#03346E]"
+          >
             <IoEyeOutline size={20} />
           </button>
           <button className="rounded-xs p-1 cursor-pointer bg-red-500">
@@ -176,7 +182,6 @@ const TrainingAndCertificatesPage = () => {
         <Form
           form={form}
           layout="vertical"
-
           // onFinish={onFinish}
           initialValues={{
             trainingName: "Annual Safety Training",
@@ -247,10 +252,27 @@ const TrainingAndCertificatesPage = () => {
           </Form.Item>
 
           <div className="flex justify-between items-center gap-5">
-            <button className="border-[#03346E] border w-full py-2 rounded-sm">Cancel</button>
-            <button className="bg-[#03346E] text-white w-full py-2 rounded-sm">Save</button>
+            <button className="border-[#03346E] border w-full py-2 rounded-sm">
+              Cancel
+            </button>
+            <button className="bg-[#03346E] text-white w-full py-2 rounded-sm">
+              Save
+            </button>
           </div>
         </Form>
+      </Modal>
+
+      {/* Certificate Modal */}
+      <Modal
+        centered
+        open={openCertificateModal}
+        footer={false}
+        onCancel={() => setOpenCertificateModal(false)}
+      >
+        <p className="text-center text-xl font-semibold">Document</p>
+        <div className="flex justify-center mt-5 ">
+          <Image src={certificaate} height={400} width={400} alt="img" />
+        </div>
       </Modal>
     </div>
   );
