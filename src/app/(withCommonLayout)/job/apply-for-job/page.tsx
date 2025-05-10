@@ -1,9 +1,7 @@
 "use client";
 import { BackButton } from "@/components/BackButton/BackButton";
 import React, { useState } from "react";
-import { Checkbox, Collapse, Button, Row, Col, Card } from "antd";
-import job from "@/assets/job.png";
-import Image from "next/image";
+import { Checkbox, Collapse, Button} from "antd";
 import { TfiBag } from "react-icons/tfi";
 import { CiLocationOn } from "react-icons/ci";
 const { Panel } = Collapse;

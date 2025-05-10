@@ -126,13 +126,13 @@ const Sidebar: React.FC = () => {
       icon: <PiGraduationCap size={25} />,
       sub_menu: [
         {
-          path: "/training-and-resource",
+          path: "/training/training-and-resource",
           label: "Training & Resource",
           icon: <></>,
           roles: ["EMPLOYEE"],
         },
         {
-          path: "/Training Certification",
+          path: "/training/Training-and-certification",
           label: "training-certification",
           icon: <></>,
           roles: ["EMPLOYEE"],
