@@ -59,6 +59,7 @@ const EmployeeDashboard = () => {
                   Break Time
                 </button>
               </div>
+
             </div>
             <button className="bg-red-600 rounded-sm text-white px-2 py-1 cursor-pointer">
               Clock Out
@@ -170,6 +171,16 @@ const EmployeeDashboard = () => {
             </div>
           </div>
         </div>
+      </div>
+
+
+      {/* Today's Tasks */}
+      <div className="mt-5 bg-white p-4 rounded-md">
+          <div className="flex  justify-between items-center">
+            <p className="font-medium">Today's Tasks</p>
+            <Link href={"/schedule"}><p className="text-[#03346E] font-medium">All Tasks</p></Link>
+            
+          </div>
       </div>
     </div>
   );
